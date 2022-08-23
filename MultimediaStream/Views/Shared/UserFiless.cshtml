@@ -1,0 +1,48 @@
+﻿@model List<MultimediaStream.Models.FileList>
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>User Files</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="~/SupportFiles/DataTables.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+
+</head>
+
+<body>
+    <div>
+        <table border="1px" id="table_id" class="display">
+            <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Link</td>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var pic in Model)
+            {
+                <tr>
+                    <td>@pic.FileId</td>
+                    <td>@pic.FileName</td>
+                    <td>
+                        <a href="@pic.FilePath">Click Here</a>              
+                        </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="~/SupportFiles/DataTables.js"></script>
+    <script type="text/javascript" src="~/SupportFiles/ViewCount.js"></script>
+</body>
+</html>
